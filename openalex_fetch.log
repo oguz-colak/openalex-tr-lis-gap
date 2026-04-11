@@ -1,0 +1,10 @@
+2026-04-09 11:56:57,500 - INFO - Starting fetch with cursor: *
+2026-04-09 11:57:01,057 - INFO - Fetched 200 records (Total: 200). Next cursor: Ils5Ni4wLCAzLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzE2MjI5MDYyMDInXSI=
+2026-04-09 11:57:04,474 - INFO - Fetched 200 records (Total: 400). Next cursor: Ils5NC4wLCAzLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzMxMTAxNzk4NzQnXSI=
+2026-04-09 11:57:07,635 - INFO - Fetched 200 records (Total: 600). Next cursor: IlsnLUluZmluaXR5JywgMSwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1czMTA3NzQ2Mzk0J10i
+2026-04-09 11:57:10,361 - INFO - Fetched 200 records (Total: 800). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyNTMzOTY4MDU4J10i
+2026-04-09 11:57:13,214 - INFO - Fetched 200 records (Total: 1000). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1czMTMzMTU0NzYwJ10i
+2026-04-09 11:57:16,442 - INFO - Fetched 200 records (Total: 1200). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0Mzk5MDU3Njc0J10i
+2026-04-09 11:57:19,683 - INFO - Fetched 182 records (Total: 1382). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c5MjA4MDM5ODQnXSI=
+2026-04-09 11:57:20,465 - INFO - No more results found.
+2026-04-09 11:57:20,466 - INFO - Job completed. Total records saved: 1382
