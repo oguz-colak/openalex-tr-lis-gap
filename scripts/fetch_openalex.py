@@ -9,17 +9,13 @@ from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_excep
 MAILTO = "oguzcan@example.com"  # placeholder mailto for OpenAlex Polite Pool
 BASE_URL = "https://api.openalex.org/works"
 
-# ISSNs for the 6 LIS journals
-ISSNS = [
-    "1300-0039", "2147-9682",  # Türk Kütüphaneciliği
-    "1302-3217", "2148-354X",  # Bilgi Dünyası
-    "2148-8975",               # Bilgi ve Belge Araştırmaları Dergisi
-    "2147-2599", "2717-7335",  # Arşiv Dünyası
-    "2636-8544",               # Bilgi Yönetimi
-    "2718-0832"                # LAMRe
+# Source IDs for the 6 LIS journals (Using full OpenAlex URIs)
+SOURCE_IDS = [
+    "https://openalex.org/s2736521800" # Bilgi Dünyası
+    # Add other IDs here as they become available
 ]
 
-FILTER = f"primary_location.source.issn:{'|'.join(ISSNS)}"
+FILTER = f"primary_location.source.id:{'|'.join(SOURCE_IDS)}"
 DATA_FILE = "data/raw/openalex_bby_works_full.json"
 STATE_FILE = "data/raw/openalex_state.json"
 

@@ -8,3 +8,11 @@
 2026-04-09 11:57:19,683 - INFO - Fetched 182 records (Total: 1382). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c5MjA4MDM5ODQnXSI=
 2026-04-09 11:57:20,465 - INFO - No more results found.
 2026-04-09 11:57:20,466 - INFO - Job completed. Total records saved: 1382
+2026-04-11 13:37:22,028 - INFO - Starting fetch with cursor: *
+2026-04-11 13:41:37,789 - ERROR - Fatal error during fetching: 400 Client Error: Bad Request for url: https://api.openalex.org/works?filter=primary_location.source.id%3As2736521800%7Cs_placeholder_1%7Cs_placeholder_2%7Cs_placeholder_3%7Cs_placeholder_4%7Cs_placeholder_5&cursor=%2A&per_page=200&mailto=oguzcan%40example.com
+2026-04-11 13:41:53,950 - INFO - Starting fetch with cursor: *
+2026-04-11 13:41:56,670 - INFO - Fetched 200 records (Total: 200). Next cursor: Ils5NC4wLCAzLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzMxMzQxMTM4MjgnXSI=
+2026-04-11 13:42:00,176 - INFO - Fetched 200 records (Total: 400). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyNTY1OTQyNTMxJ10i
+2026-04-11 13:42:07,203 - INFO - Fetched 149 records (Total: 549). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c4ODMyOTY0ODAnXSI=
+2026-04-11 13:42:08,412 - INFO - No more results found.
+2026-04-11 13:42:08,412 - INFO - Job completed. Total records saved: 549

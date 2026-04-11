@@ -66,3 +66,14 @@
 > [2026-04-11 12:47] - **Action:** Created empty data dictionary file.
 > - **Changes:** Created `data_dictionary.md`.
 > - **Outcome:** Initialized an empty markdown file for future data documentation.
+
+> [2026-04-11 13:10] - **Action:** Initialized Git and pushed to GitHub repository.
+> - **Changes:** Initialized `.git`, added all files, and pushed to `https://github.com/oguz-colak/openalex-tr-lis-gap.git`.
+> - **Outcome:** Project structure and FAIR rules committed to remote `main` branch.
+
+> [2026-04-11 13:42] - **Action:** Updated `fetch_openalex.py` to use Source IDs and re-executed harvesting.
+> - **Changes:** Modified `scripts/fetch_openalex.py` (Source ID filter, cleaned placeholders), re-generated `data/raw/openalex_bby_works_full.json`.
+> - **Outcome:** Successfully fetched 549 records for Bilgi Dünyası using its OpenAlex Source ID (`s2736521800`). 
+> 
+> ### 🚨 ÖNEMLİ BULGU (BİLDİRİ İÇİN)
+> ISSN bazlı API sorgusu ile Source ID bazlı Web sorgusu arasındaki fark test edildi. Sadece Bilgi Dünyası dergisinde, makale düzeyinde ISSN üstverisi eksik olan yaklaşık 500 adet (549) kayıt tespit edildi. Bu durum, Türkiye adresli LIS dergilerinin OpenAlex'e aktarımında (OJS migrasyonu) ciddi bir Metadata Gap (Üstveri Boşluğu) olduğuna dair bildirinin temel bulgusunu oluşturacaktır.
