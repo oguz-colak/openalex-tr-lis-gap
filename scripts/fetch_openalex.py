@@ -4,18 +4,30 @@ import time
 import requests
 import logging
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type
+from dotenv import load_dotenv
+
+# .env dosyasındaki API anahtarını yükle
+load_dotenv()
 
 # --- CONFIGURATION ---
-MAILTO = "oguzcan@example.com"  # placeholder mailto for OpenAlex Polite Pool
+API_KEY = os.environ.get('OPENALEX_API_KEY')
+MAILTO = "oguzcan@example.com"  # OpenAlex Polite Pool için e-posta
 BASE_URL = "https://api.openalex.org/works"
 
-# Source IDs for the 6 LIS journals (Using full OpenAlex URIs)
+# 6 Dergi ve varyasyonları için OpenAlex Source ID'leri
 SOURCE_IDS = [
-    "https://openalex.org/s2736521800" # Bilgi Dünyası
-    # Add other IDs here as they become available
+    "https://openalex.org/S4210169130", # Bilgi ve Belge Araştırmaları
+    "https://openalex.org/S2737140681", # Türk Kütüphaneciliği
+    "https://openalex.org/S4210200535", # Arşiv Dünyası
+    "https://openalex.org/S4210235296", # Bilgi Yönetimi (Yayıncı hatası olan)
+    "https://openalex.org/S2736521800", # Bilgi Dünyası (Ana Kayıt)
+    "https://openalex.org/S4306401264", # Bilgi Dünyası (Parçalanmış Kayıt 1)
+    "https://openalex.org/S4306401982", # Bilgi Dünyası (Parçalanmış Kayıt 2)
+    "https://openalex.org/S4210236601"  # LAMRe Journal
 ]
 
-FILTER = f"primary_location.source.id:{'|'.join(SOURCE_IDS)}"
+# KRİTİK: 'primary_location' yerine tüm 'locations' dizisini tarıyoruz ki hayalet veriler kaçmasın.
+FILTER = f"locations.source.id:{'|'.join(SOURCE_IDS)}"
 DATA_FILE = "data/raw/openalex_bby_works_full.json"
 STATE_FILE = "data/raw/openalex_state.json"
 
@@ -44,7 +56,7 @@ def save_data(records):
         except json.JSONDecodeError:
             data = []
         
-        # Optimization: remove abstract_inverted_index
+        # Optimization: remove abstract_inverted_index to save space
         for record in records:
             record.pop('abstract_inverted_index', None)
         
@@ -80,6 +92,11 @@ def fetch_page(cursor):
         "per_page": 200,
         "mailto": MAILTO
     }
+    
+    # Eğer API Key varsa isteğe ekle (Limitleri genişletmek için)
+    if API_KEY:
+        params["api_key"] = API_KEY
+
     response = requests.get(BASE_URL, params=params, timeout=30)
     response.raise_for_status()
     return response.json()
@@ -88,8 +105,14 @@ def main():
     # Ensure raw data directory exists
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
     
-    cursor = load_state()
-    logger.info(f"Starting fetch with cursor: {cursor}")
+    # State dosyasını sıfırla (Temiz çekim için)
+    if os.path.exists(STATE_FILE):
+        os.remove(STATE_FILE)
+    if os.path.exists(DATA_FILE):
+        os.remove(DATA_FILE)
+        
+    cursor = "*"
+    logger.info("Mevcut veri temizlendi. API Key ile yeni çekim başlatılıyor...")
     
     total_fetched = 0
     
@@ -100,7 +123,7 @@ def main():
             next_cursor = data.get("meta", {}).get("next_cursor")
             
             if not results:
-                logger.info("No more results found.")
+                logger.info("Başka sonuç bulunamadı.")
                 break
             
             # Save data and state
@@ -108,7 +131,7 @@ def main():
             save_state(next_cursor)
             
             total_fetched += len(results)
-            logger.info(f"Fetched {len(results)} records (Total: {total_fetched}). Next cursor: {next_cursor}")
+            logger.info(f"{len(results)} kayıt çekildi (Toplam: {total_fetched}). Sonraki imleç: {next_cursor}")
             
             # Stop if no next cursor
             if not next_cursor or next_cursor == cursor:
@@ -116,14 +139,14 @@ def main():
                 
             cursor = next_cursor
             
-            # Small polite delay
+            # API Key olduğu için bekleme süresini optimize edebiliriz
             time.sleep(0.1)
             
         except Exception as e:
-            logger.error(f"Fatal error during fetching: {e}")
+            logger.error(f"Veri çekilirken kritik hata: {e}")
             raise
 
-    logger.info(f"Job completed. Total records saved: {total_fetched}")
+    logger.info(f"İşlem tamamlandı. Kaydedilen toplam BBY makalesi: {total_fetched}")
 
 if __name__ == "__main__":
     main()

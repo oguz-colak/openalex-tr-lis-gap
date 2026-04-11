@@ -77,3 +77,25 @@
 > 
 > ### 🚨 ÖNEMLİ BULGU (BİLDİRİ İÇİN)
 > ISSN bazlı API sorgusu ile Source ID bazlı Web sorgusu arasındaki fark test edildi. Sadece Bilgi Dünyası dergisinde, makale düzeyinde ISSN üstverisi eksik olan yaklaşık 500 adet (549) kayıt tespit edildi. Bu durum, Türkiye adresli LIS dergilerinin OpenAlex'e aktarımında (OJS migrasyonu) ciddi bir Metadata Gap (Üstveri Boşluğu) olduğuna dair bildirinin temel bulgusunu oluşturacaktır.
+> 
+> - **Entity Resolution Hatası (Varlık Çözümleme):** Bilgi Dünyası dergisi sistemde tek bir otorite dizininde birleştirilememiş, 3 farklı Source ID (S2736521800, S4306401264, S4306401982) ile parçalanmıştır. Bu durum derginin bibliyometrik etkisini manipüle etmektedir.
+> 
+> - **Provenance Hatası (Köken ve Otorite Kontrolü):** 'Bilgi Yönetimi' dergisinin yayıncısı Ankara Üniversitesi olmasına rağmen sistemde 'Süleyman Demirel University' olarak geçmektedir. Bu, DergiPark/OJS sistemlerinden küresel indekslere veri aktarımında ciddi bir yayıncı üstverisi (publisher metadata) eşleştirme hatası olduğunu kanıtlar.
+> [2026-04-11 14:50] - **Action:** Veri Doğrulama ve Hayalet Kayıt Tespiti.
+> - **Changes:** `progress_log.md` güncellendi.
+> - **Outcome:** OpenAlex Web arayüzünden alınan manuel export (549 kayıt) ile API çıktısının (548 kayıt) 1:1 eşleştiği teyit edildi. Ancak sistem arayüzünde (Overview) görünen toplam sayı 1052'dir. Bu durum, veri setinde yaklaşık %48 oranında bir "Hayalet Kayıt" (Phantom Records) varlığını kanıtlamaktadır. Bu bulgu, bildirinin 'Bulgular' ve FAIR ilkeleri çerçevesindeki 'Tartışma' bölümlerinde merkezi bir argüman olarak kullanılacaktır.
+> [2026-04-11 14:53] - **Action:** OpenAlex API Key entegrasyonu ve güvenlik yapılandırması.
+> - **Changes:** `.env` ve `.gitignore` dosyaları oluşturuldu/güncellendi. `scripts/fetch_openalex.py` dosyasına API Key desteği (dotenv) eklendi.
+> - **Outcome:** Hassas verilerin güvenliği sağlandı ve OpenAlex API isteklerine kimlik doğrulama parametresi eklendi.
+> 
+> > [2026-04-11 15:39] - **Action:** 6 LIS dergisi ve varyasyonları için kapsamlı veri çekimi gerçekleştirildi.
+> - **Changes:** `data/raw/openalex_bby_works_full.json` dosyası temizlendi ve yeniden oluşturuldu.
+> - **Outcome:** 2880 kayıt (`locations.source.id` filtresi kullanılarak) başarıyla çekildi. Bilgi Dünyası'nın parçalanmış kayıtları ve diğer 5 derginin verileri harmonize edildi.
+
+> [2026-04-11 16:10] - **Action:** JSON verisi tüm alanları içerecek şekilde CSV'ye dönüştürüldü.
+> - **Changes:** `data/processed/openalex_bby_works_full.csv` silindi, `data/processed/openalex_tr_lis_works.csv` oluşturuldu. `scripts/openalex_json_to_csv.py` ve `data_dictionary.md` güncellendi.
+> - **Outcome:** 2880 kayıt, karakter kodlaması (UTF-8-SIG) korunarak ve tüm üstveri alanları dahil edilerek yeni CSV formatına aktarıldı.
+
+> [2026-04-11 16:55] - **Action:** Engineered a Metadata Completeness Matrix for OpenAlex-DergiPark gap analysis.
+> - **Changes:** Rewrote `scripts/openalex_json_to_csv.py`, created `data/processed/openalex_completeness_matrix.csv`, updated `implementation_plan.md` and `walkthrough.md`.
+> - **Outcome:** Successfully flattened 2,880 records into a relational relational matrix with 50 columns. Implemented boolean completeness indicators for FAIR compliance (is_oa, has_orcid, has_ror). Normalized nested taxonomic fields (topics, concepts) using LIS-readable labels. Terminology refined to strictly focus on Metadata Completeness Comparison instead of bibliometric analysis.

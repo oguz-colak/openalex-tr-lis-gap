@@ -16,3 +16,21 @@
 2026-04-11 13:42:07,203 - INFO - Fetched 149 records (Total: 549). Next cursor: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c4ODMyOTY0ODAnXSI=
 2026-04-11 13:42:08,412 - INFO - No more results found.
 2026-04-11 13:42:08,412 - INFO - Job completed. Total records saved: 549
+2026-04-11 15:38:26,914 - INFO - Mevcut veri temizlendi. API Key ile yeni çekim başlatılıyor...
+2026-04-11 15:38:29,320 - INFO - 200 kayıt çekildi (Toplam: 200). Sonraki imleç: Ils5Ni4wLCA2LCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzMwMDMwNTgzNzcnXSI=
+2026-04-11 15:38:32,055 - INFO - 200 kayıt çekildi (Toplam: 400). Sonraki imleç: Ils5NS4wLCAxLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQyODA1NzIzNjMnXSI=
+2026-04-11 15:38:35,157 - INFO - 200 kayıt çekildi (Toplam: 600). Sonraki imleç: Ils5NC4wLCAxLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzE0ODAwMTI2ODAnXSI=
+2026-04-11 15:38:38,321 - INFO - 200 kayıt çekildi (Toplam: 800). Sonraki imleç: Ils5My4wLCAxLCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzI5NTE4NzU0ODgnXSI=
+2026-04-11 15:38:41,426 - INFO - 200 kayıt çekildi (Toplam: 1000). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cxNTU3ODA2NzQ1J10i
+2026-04-11 15:38:44,619 - INFO - 200 kayıt çekildi (Toplam: 1200). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cxODQzNTgxMTk2J10i
+2026-04-11 15:38:48,318 - INFO - 200 kayıt çekildi (Toplam: 1400). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyMDk5Njk5MzM4J10i
+2026-04-11 15:38:51,526 - INFO - 200 kayıt çekildi (Toplam: 1600). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyMTc1MzUyNjA3J10i
+2026-04-11 15:38:55,667 - INFO - 200 kayıt çekildi (Toplam: 1800). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyNTAyMTkyNzIxJ10i
+2026-04-11 15:38:59,508 - INFO - 200 kayıt çekildi (Toplam: 2000). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyNzMyODM3NDU1J10i
+2026-04-11 15:39:07,956 - INFO - 200 kayıt çekildi (Toplam: 2200). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1cyOTc5NTQ2MzQ0J10i
+2026-04-11 15:39:11,982 - INFO - 200 kayıt çekildi (Toplam: 2400). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1czMTIwNTQzNzA1J10i
+2026-04-11 15:39:16,336 - INFO - 200 kayıt çekildi (Toplam: 2600). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0MzkwMzkzNTk3J10i
+2026-04-11 15:39:21,057 - INFO - 200 kayıt çekildi (Toplam: 2800). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MTMxNzUwNDE3J10i
+2026-04-11 15:39:25,045 - INFO - 80 kayıt çekildi (Toplam: 2880). Sonraki imleç: IlsnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c5OTQ3MjQ1ODQnXSI=
+2026-04-11 15:39:26,179 - INFO - Başka sonuç bulunamadı.
+2026-04-11 15:39:26,179 - INFO - İşlem tamamlandı. Kaydedilen toplam BBY makalesi: 2880
