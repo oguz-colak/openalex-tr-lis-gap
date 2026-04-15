@@ -1,0 +1,12 @@
+{
+    "antigravity.providers.openai": {
+        "apiKey": "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",
+        "defaultModel": "gpt-4o",
+        "enableAgenticTools": true
+    },
+    "antigravity.openai": {
+        "apiKey": "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",
+        "defaultModel": "gpt-4o",
+        "enabled": true
+    }
+}

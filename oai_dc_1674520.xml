@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/zollu/bundles/ojsoai/oai2.xsl" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
+         http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+    <responseDate>2026-04-13T16:20:18Z</responseDate>
+    <request verb="GetRecord" metadataPrefix="oai_dc"
+             identifier="oai:dergipark.org.tr:record/1674520">https://dergipark.org.tr/api/public/oai/?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai%3Adergipark.org.tr%3Aarticle%2F1674520</request>
+    <GetRecord>
+        <record>
+            <header>
+    <identifier>oai:dergipark.org.tr:record/1674520</identifier>
+    <datestamp>2026-02-02</datestamp>
+                        <setSpec>tk</setSpec>
+            </header>
+            <metadata>
+                <oai_dc:dc
+        xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+        xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <dc:title xml:lang="tr-TR">
+                <![CDATA[Bilgi ve Belge Yönetimi Bölümü Öğrencilerinin Yapay Zekâ Okuryazarlığı Düzeyleri Üzerine Bir Araştırma]]>
+            </dc:title>
+                                <dc:title xml:lang="en-US">
+                <![CDATA[A Study on the Artificial Intelligence Literacy Levels of Information and Records Management Students]]>
+            </dc:title>
+                            <dc:creator>
+            <![CDATA[Cengiz Mater, Emine]]>
+        </dc:creator>
+            <dc:creator>
+            <![CDATA[Yalçınkaya, Bahattin]]>
+        </dc:creator>
+                                                                    <dc:subject><![CDATA[Library and Information Studies (Other)]]></dc:subject>
+                                                                <dc:subject><![CDATA[Kütüphane ve Bilgi Çalışmaları (Diğer)]]></dc:subject>
+                                                                                            <dc:subject><![CDATA[Yapay zekâ (YZ),Yapay zekâ (YZ) okuryazarlığı,Bilgi ve Belge Yönetimi Bölümü]]></dc:subject>
+                                                                        <dc:subject><![CDATA[Artificial Intelligence (AI),Artificial Intelligence (AI) literacy,Information and Records Management Department]]></dc:subject>
+                                                                    <dc:description
+                        xml:lang="tr-TR">
+                    <![CDATA[Amaç: Türkiye’deki Bilgi ve Belge Yönetimi (BBY) Bölümü lisans öğrencilerinin yapay zekâ okuryazarlık düzeylerini belirlemek ve bu konudaki durumun kapsamlı bir değerlendirmesini yapmaktır.Yöntem: Araştırmada nicel betimsel tarama modeli yöntemi kullanılmıştır. Araştırmanın örneklemi, olasılığa dayalı basit tesadüfi örnekleme yöntemiyle belirlenmiş olup, toplam 400 öğrenci araştırmaya katılmıştır. Veri toplama aracı olarak, &quot;Yapay Zekâ Okuryazarlığı Ölçeği&quot; kullanılmıştır. Bu ölçek, araştırmanın hedef kitlesi olan 400 öğrenciye çevrimiçi ortamda uygulanmıştır. Veri toplama süreci, katılımcılara 29.01.2025 tarihinde &quot;Google Form&quot; üzerinden çevrimiçi anket gönderilerek başlatılmış, veri toplama işlemi 11.03.2025 tarihinde tamamlanmıştır.Bulgular: BBY Bölümü öğrencilerin yapay zekâ okuryazarlık düzeyleri orta seviyedir. Yapay zekâ uygulamalarını kullanan öğrencilerin kullanmayan öğrencilere göre yapay zekâ okuryazarlığı seviyelerinin daha yüksek olduğu ortaya çıkmıştır. Ölçeğin genel boyutu incelendiğinde, öğrencilerin cinsiyeti, yaşı ve okudukları üniversite değişkenlerine bağlı olarak yapay zekâ okuryazarlığında bir farklılık gözlemlenmezken, sınıf seviyesi değişkeni açısından farklılıklar tespit edilmiştir. Öğrencilerin bilgi teknolojileri kullanım becerileri arttıkça, yapay zekâ okuryazarlığındaki teknik, eleştirel ve pratik farkındalık ve yetkinliklerde artış gözlemlenmiştir.Sonuç: Bu çalışma, BBY Bölümü öğrencilerinin yapay zekâ okuryazarlık düzeylerini inceleyerek, eğitim sürecinde yapay zekâ okuryazarlığının artırılmasına yönelik önemli bulgular sunmaktadır. Bu bulgular, eğitim programlarının yapay zekâ okuryazarlığını artırmaya yönelik daha hedeflenmiş ve sınıf seviyelerine uygun içerikler geliştirmesi gerektiğini göstermektedir. Ayrıca, bu çalışma, yapay zekâ teknolojilerine yönelik eğitim programlarının öğrencilerin farkındalık düzeylerini artırabileceğini ve gelecekteki araştırmalar için bir temel oluşturduğunu vurgulamaktadır.Özgünlük: Bu araştırma, BBY Bölümündeki öğrencilerin yapay zekâ okuryazarlığı seviyelerini detaylı bir şekilde inceleyen ilk çalışmalardan biri olarak dikkat çekmektedir. Bu yönüyle, alandaki özgünlüğü ve öncülüğü ile önemli bir yere sahiptir.]]>
+                </dc:description>
+                                                <dc:description
+                        xml:lang="en-US">
+                    <![CDATA[Purpose: This study aims to assess the AI literacy level among undergraduate students in the Information and Records Management Departments in Türkiye and to offer an in-depth analysis of the current state of affairs on this matter.Method: In this study, a quantitative descriptive survey method was used. The sample of the research was determined through probability-based simple random sampling, and a total of 400 students participated in the study. The data collection tool used was the “Artificial Intelligence Literacy Scale.” This scale was administered online to the 400 students, who formed the target group of the study. The data collection process began on January 29, 2025, with an online survey distributed to participants through Google Forms and concluded on March 11, 2025.Findings: The AI literacy level of students in the Information and Records Management Department was found to be at an intermediate level. Students who used AI applications demonstrated higher levels of AI literacy compared to those who did not. When examining the overall scale, no differences were observed in AI literacy based on variables such as gender, age, and the university attended, while differences were found according to the class level variable. It was observed that as students’ information technology usage skills improved, their technical, critical, and practical awareness and competence regarding AI literacy also increased.Implications: This study provides significant findings regarding the increase in AI literacy within the educational process by examining the AI literacy levels of Information and Records Management Department students. These findings indicate the need for more targeted and class-level-appropriate content in educational programs to enhance AI literacy. Moreover, the study emphasizes that educational programs related to AI technologies can increase students&#039; awareness and lay a foundation for future research.Originality: This research stands out as one of the first studies to thoroughly examine the artificial intelligence literacy levels of students in the Department of Information and Records Management. In this respect, it holds a significant position in the field with its originality and pioneering nature.]]>
+                </dc:description>
+                                        <dc:publisher><![CDATA[Türk Kütüphaneciler Derneği]]></dc:publisher>
+                                        <dc:date>2025-12-30</dc:date>
+            <dc:type>info:eu-repo/semantics/article</dc:type>
+                <dc:format>application/pdf</dc:format>
+            <dc:identifier>https://dergipark.org.tr/en/pub/tk/article/1674520</dc:identifier>
+            <dc:identifier>https://doi.org/10.24146/tk.1674520</dc:identifier>
+                <dc:identifier>https://izlik.org/JA98XY65PC</dc:identifier>
+                    <dc:source>
+            <![CDATA[Türk Kütüphaneciliği, Vol. 39 No. 4            ]]>
+        </dc:source>
+                    <dc:language>tr</dc:language>
+                    <dc:relation>https://dergipark.org.tr/en/pub/tk</dc:relation>
+        <dc:relation>https://dergipark.org.tr/en/pub/tk/archive</dc:relation>
+                    <dc:relation>https://dergipark.org.tr/en/pub/tk/issue/94987</dc:relation>
+                        <dc:relation>https://doi.org/10.24146/tk.1674520</dc:relation>
+                <dc:relation>https://izlik.org/JA98XY65PC</dc:relation>
+            </oai_dc:dc>
+            </metadata>
+        </record>
+    </GetRecord>
+</OAI-PMH>

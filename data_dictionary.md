@@ -1,4 +1,4 @@
-# Data Dictionary: OpenAlex Metadata Analysis
+# Data Dictionary: OpenAlex Metadata Completeness Analysis
 
 Bu doküman, projede kullanılan veri setlerinin yapısını ve sütun tanımlarını içermektedir.
 
@@ -14,7 +14,7 @@ Bu doküman, projede kullanılan veri setlerinin yapısını ve sütun tanımlar
 | `publication_year` | Integer | Yayının yılı. | Temporal metadata |
 | `authorships` | JSON String | Yazarlar ve kurumları içeren tam liste. | **Interoperable** (ORCID/ROR) |
 | `primary_location` | JSON String | Kaynak ve erişim detaylarını içeren veri. | **Interoperable** |
-| `cited_by_count` | Integer | Alınan toplam atıf sayısı. | Impact metric |
+| `cited_by_count` | Integer | Alınan toplam atıf sayısı. | Completeness metric |
 | `concepts` | JSON String | Konu etiketleri. | **Interoperable** |
 
 ## Veri Seti: openalex_bby_works_full.json
@@ -30,7 +30,7 @@ Bu doküman, projede kullanılan veri setlerinin yapısını ve sütun tanımlar
 | `results[].authorships[]` | List | Yazarlar ve kurumları. | **Interoperable** (ORCID/ROR) |
 | `results[].locations[]` | List | Yayının bulunduğu kaynaklar. | **Accessible** (Open Access) |
 | `results[].primary_location.source.id` | URI | Dergi (Source) PID. | **Interoperable** (Internal ID) |
-| `results[].cited_by_count` | Int | Atıf sayısı. | Reusable Metric |
+| `results[].cited_by_count` | Int | Atıf sayısı. | Completeness Metric |
 | `results[].concepts[]` | List | AI tabanlı konu etiketleri. | **Interoperable** (Vocabularies) |
 
 ## Veri Seti: openalex_state.json
