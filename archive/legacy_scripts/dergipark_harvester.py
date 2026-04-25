@@ -1,13 +1,17 @@
+import re
 import requests
 import time
 import os
 import xml.etree.ElementTree as ET
 from typing import List, Dict, Optional
 
+from models import ArticleMetadata
+from fetch_dergipark import OAI_NS, MODS_NS
+
 # Constants
 BASE_URL = "https://dergipark.org.tr/api/public/oai/"
 IDENTIFIER = "oai:dergipark.org.tr:article/1674520"
-METADATA_PREFIXES = ["oai_dc", "oai_mods", "oai_marc"]
+METADATA_PREFIXES = ["oai_mods"]  # AGENTS.md Kural 1: yalnızca oai_mods
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
 
@@ -68,6 +72,77 @@ def save_to_file(content: str, filename: str):
         f.write(content)
     print(f"[+] Saved: {filename}")
 
+def parse_mods_fields(xml_content: str) -> Dict:
+    """Extracts key fields from MODS XML for tracer bullet verification."""
+    ns = {"oai": OAI_NS, "mods": MODS_NS, "xml": "http://www.w3.org/XML/1998/namespace"}
+    root = ET.fromstring(xml_content)
+    mods = root.find(".//mods:mods", ns)
+    if mods is None:
+        return {"error": "No <mods> element found"}
+
+    def text(path):
+        el = mods.find(path, ns)
+        return el.text.strip() if el is not None and el.text else None
+
+    titles = {
+        ti.get("{http://www.w3.org/XML/1998/namespace}lang", "?"):
+            (ti.find("mods:title", ns).text or "").strip()
+        for ti in mods.findall("mods:titleInfo", ns)
+        if ti.find("mods:title", ns) is not None
+    }
+
+    authors = [
+        f"{n.findtext('mods:namePart[@type=\"given\"]', namespaces=ns, default='')} "
+        f"{n.findtext('mods:namePart[@type=\"family\"]', namespaces=ns, default='')}".strip()
+        for n in mods.findall("mods:name[@type='personal']", ns)
+    ]
+
+    return {
+        "titles": titles,
+        "authors": authors,
+        "language": text("mods:language/mods:languageTerm"),
+        "date_issued": text("mods:originInfo/mods:dateIssued"),
+        "publisher": text("mods:originInfo/mods:publisher"),
+        "doi": next(
+            (el.text for el in mods.findall("mods:identifier", ns)
+             if el.get("type") == "doi"),
+            None
+        ),
+        "journal": text("mods:relatedItem[@type='host']/mods:titleInfo/mods:title"),
+        "abstract_tr": next(
+            (el.text[:80] + "..." for el in mods.findall("mods:abstract", ns)
+             if el.get("{http://www.w3.org/XML/1998/namespace}lang") == "tr-TR"),
+            None
+        ),
+        "funders": [],
+    }
+
+
+def build_article(xml_content: str) -> ArticleMetadata:
+    """Parses MODS XML and returns a validated ArticleMetadata instance."""
+    raw = parse_mods_fields(xml_content)
+
+    date_issued = raw.get("date_issued") or ""
+    year_match = re.match(r"^(\d{4})", date_issued)
+    if not year_match:
+        raise ValueError(f"date_issued'den yıl çıkarılamadı: '{date_issued}'")
+
+    return ArticleMetadata(
+        title_tr=raw["titles"].get("tr-TR", ""),
+        title_en=raw["titles"].get("en-US"),
+        language=raw["language"] or "",
+        publication_year=int(year_match.group(1)),
+        identifier_doi=raw["doi"] or "",
+        source_journal=raw["journal"] or "",
+        abstract_tr=raw.get("abstract_tr"),
+        authors=raw.get("authors", []),
+        date_issued=date_issued,
+        publisher=raw.get("publisher"),
+        funders=[],
+        ror_ids=[],
+    )
+
+
 def verify_outputs(filenames: List[str]) -> bool:
     """
     Verifies that the files exist, are not empty, and contain valid XML.
@@ -120,7 +195,12 @@ def main():
     if harvested_files:
         success = verify_outputs(harvested_files)
         if success:
-            print("\n[SUCCESS] Tracer Bullet test completed successfully.")
+            print("\n--- PYDANTIC VALIDATION ---")
+            with open(harvested_files[0], encoding="utf-8") as f:
+                article = build_article(f.read())
+            for k, v in article.model_dump().items():
+                print(f"  {k}: {v}")
+            print("\n[SUCCESS] Tracer Bullet + Pydantic validation completed successfully.")
         else:
             print("\n[FAILURE] One or more validations failed.")
     else:

@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
          http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
-    <responseDate>2026-04-13T16:20:18Z</responseDate>
+    <responseDate>2026-04-20T14:41:04Z</responseDate>
     <request verb="GetRecord" metadataPrefix="oai_mods"
              identifier="oai:dergipark.org.tr:record/1674520">https://dergipark.org.tr/api/public/oai/?verb=GetRecord&amp;metadataPrefix=oai_mods&amp;identifier=oai%3Adergipark.org.tr%3Aarticle%2F1674520</request>
     <GetRecord>

@@ -220,3 +220,25 @@
 >
 > - **Changes:** Updated `Symposium_Proceeding_Draft.docx` (Özet ve Anahtar Kelimeler paragrafları). Created `scripts/update_abstract.py`.
 > - **Outcome:** `abstract_draft.md` içeriği python-docx aracılığıyla DOCX'in paragraf [3] (Özet gövdesi) ve paragraf [4] (Anahtar Kelimeler) alanlarına başarıyla aktarıldı. Doğrulama scriptiyle içerik teyit edildi.
+
+> [2026-04-17 10:24] - **Action:** NotebookLM MCP üzerinden araştırma pipeline'ı için Vibe Coding hata analizi gerçekleştirildi.
+>
+> - **Changes:** Created `tmp/pipeline_hata_analizi.md`. Added "Vibe Coding - Hata Yönetimi" notebook to NotebookLM library (ID: `vibe-coding-hata-y-netimi`).
+> - **Outcome:** `arastirma_pipeline.md` dosyasındaki 5 adımlı pipeline için AI agent kaynaklı olası hatalar ve çözüm stratejileri tespit edildi. Temel riskler: OAI-PMH format kayması, Pydantic sessiz veri kaybı, GetRecord miktar doğrulama eksikliği, Great Expectations happy-path bias ve HTTP 200 tuzağı. Her adım için "iz mermisi", "TDD", "Memento Metodu" ve "Adversarial Testing" stratejileri belirlendi.
+
+> [2026-04-20 16:17] - **Action:** Fixed Markdown linter warnings.
+>
+> - **Changes:** Modified `AGENTS.md`.
+> - **Outcome:** Resolved MD060 table-column-style warnings by fixing table pipe spacing.
+
+> [2026-04-22 16:11] - **Action:** Executed project restructuring according to task.md guidelines.
+> - **Changes:** Created layered data architecture (raw, parsed, analysis, enriched), separated corpus and docs, archived legacy scripts/data, and refactored pipeline scripts. Removed unused tmp/scratch and pycache files. Created logs/pipeline/refactor_log.md.
+> - **Outcome:** Project structure successfully aligned with scientific data engineering best practices.
+
+> [2026-04-23 09:25] - **Action:** Executed targeted architectural fixes defined in task_2.md.
+> - **Changes:** Moved dergipark parsed records out of raw folder; separated parsing and transformation logic into scripts/parse/parse_openalex.py and scripts/analysis/build_completeness_matrix.py; updated schema and injected provenance fields into parsed datasets. Created logs/pipeline/fix_log.md.
+> - **Outcome:** Restored separation of concerns, enforced analysis purity, and improved data traceability.
+
+> [2026-04-25 08:45] - **Action:** Restored missing MCP server script to resolve initialization error.
+> - **Changes:** Moved `archive/legacy_scripts/mcp_openai_server.py` back to `scripts/mcp_openai_server.py`.
+> - **Outcome:** Resolved the "No such file or directory" error during MCP server initialization. The script was previously moved to the archive during refactoring but is still required by the environment's MCP configuration.
