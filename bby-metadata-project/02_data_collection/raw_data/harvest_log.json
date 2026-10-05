@@ -1,0 +1,61 @@
+{
+  "source": "openalex",
+  "harvested_at": "2026-05-07T09:32:01Z",
+  "journals": {
+    "turk_kutuphaneciligi": {
+      "label": "Türk Kütüphaneciliği",
+      "issn": [
+        "2147-9682"
+      ],
+      "source_id": "S2737140681",
+      "record_count": 1918,
+      "output_file": "bby-metadata-project/02_data_collection/raw_data/openalex/turk_kutuphaneciligi.json"
+    },
+    "bilgi_dunyasi": {
+      "label": "Bilgi Dünyası",
+      "issn": [
+        "2148-354X"
+      ],
+      "source_id": "S2736521800",
+      "record_count": 610,
+      "output_file": "bby-metadata-project/02_data_collection/raw_data/openalex/bilgi_dunyasi.json"
+    },
+    "bilgi_belge_arastirmalari": {
+      "label": "Bilgi ve Belge Araştırmaları",
+      "issn": [
+        "2148-8975"
+      ],
+      "source_id": "S4210169130",
+      "record_count": 58,
+      "output_file": "bby-metadata-project/02_data_collection/raw_data/openalex/bilgi_belge_arastirmalari.json"
+    },
+    "lam_research_journal": {
+      "label": "Library, Archive and Museum Research Journal",
+      "issn": [
+        "2718-0832"
+      ],
+      "source_id": "S4210236601",
+      "record_count": 55,
+      "output_file": "bby-metadata-project/02_data_collection/raw_data/openalex/lam_research_journal.json"
+    },
+    "arsiv_dunyasi": {
+      "label": "Arşiv Dünyası",
+      "issn": [
+        "2147-2599",
+        "2717-7335"
+      ],
+      "source_id": "S4210200535",
+      "record_count": 32,
+      "output_file": "bby-metadata-project/02_data_collection/raw_data/openalex/arsiv_dunyasi.json"
+    },
+    "bilgi_yonetimi": {
+      "label": "Bilgi Yönetimi",
+      "issn": [
+        "2636-8544"
+      ],
+      "source_id": "S4210235296",
+      "record_count": 155,
+      "output_file": "bby-metadata-project/02_data_collection/raw_data/openalex/bilgi_yonetimi.json"
+    }
+  }
+}

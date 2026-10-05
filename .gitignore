@@ -1,2 +1,28 @@
+# Python and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
 
+# Local environments and credentials
+.venv/
+venv/
+env/
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Generated or machine-local output
+*.log
+*.tmp
+*.bak
+
+# Full-text/copyrighted material is kept outside the repository
+*.pdf
+
+# OpenCode/Superpowers scratch space
+.superpowers/

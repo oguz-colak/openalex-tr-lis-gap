@@ -37,7 +37,7 @@
 - Git metadata only: branch/tag creation; no product files modified.
 
 **Interfaces:**
-- Consumes: current isolated clone at `C:\Users\oguzc\AppData\Local\Temp\opencode\openalex-tr-lis-gap-inspect-20261005-124421`.
+- Consumes: the isolated migration clone used for this plan.
 - Produces: local branch `migration/current-project-2026-10-05` and tag `legacy-before-current-project` pointing to the pre-migration remote `main` commit.
 
 - [ ] **Step 1: Verify the starting point**
@@ -84,7 +84,7 @@ Expected: one plan commit and no unstaged changes.
 - Do not create: PDFs, `.log`, `.pyc`, `__pycache__`.
 
 **Interfaces:**
-- Consumes: source files from `C:\Users\oguzc\OneDrive\Masaüstü\Antigravity_Projeleri\5th_GGBBYS\bby-metadata-project`.
+- Consumes: source files from the current project's `bby-metadata-project` directory.
 - Produces: current raw data and harvester snapshot under the repository's `bby-metadata-project` boundary.
 
 - [ ] **Step 1: Remove legacy tracked product files**

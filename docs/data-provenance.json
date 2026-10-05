@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-10-05T10:10:08.717994+00:00",
+  "files": [
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/bilgi_dunyasi/oai_bd.xml",
+      "bytes": 2245686,
+      "sha256": "1d39e75fce2720aa78e21507d818d414369743004bc54479ff5ba76c665ab15f",
+      "format": "xml"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/dergipark/ad.xml",
+      "bytes": 788202,
+      "sha256": "b7ebeea9af97712c1cf5cbd8c1bcf3626a66181d81e8065bdf520fb36f8e491e",
+      "format": "xml"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/dergipark/bel.xml",
+      "bytes": 455564,
+      "sha256": "ca1b5da9304dd5fb13a9cfd8aa8ce0137d7838193a00078320e586fd834194b4",
+      "format": "xml"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/dergipark/by.xml",
+      "bytes": 1213142,
+      "sha256": "4025567266d53d61aa487fe0791e48795b527ddadb76f15ca11b859de4a71861",
+      "format": "xml"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/dergipark/lamre.xml",
+      "bytes": 478729,
+      "sha256": "52c8101d509ed1ca82d5639d036da57df1cbc04c23e5981501ff9ae0a7f16c3d",
+      "format": "xml"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/dergipark/tk.xml",
+      "bytes": 4335609,
+      "sha256": "c8c786eaa0e1e10e771a23d0a83ecea442bc1df106ff6bb224ebcb8aa7b67c28",
+      "format": "xml"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/harvest_log.json",
+      "bytes": 1890,
+      "sha256": "253f0dbe1a590ff07c007cc9e3a89f567dd47deaa5974ca6a43848eecb2bd215",
+      "format": "json"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/openalex/arsiv_dunyasi.json",
+      "bytes": 640343,
+      "sha256": "5a3e4c0a88bf51c598f906c2e8c8a614db6a72fce4f4e626744358e7544fd234",
+      "format": "json"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/openalex/bilgi_belge_arastirmalari.json",
+      "bytes": 999611,
+      "sha256": "811d95a33778da4e284a66675de7b4bbb14c0df5917e226033f69c1b020aa3d6",
+      "format": "json"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/openalex/bilgi_dunyasi.json",
+      "bytes": 11822702,
+      "sha256": "18b187d2a456649f8aa249291389d9fb32a190b3008a0ae7e32cc3a664cffa9e",
+      "format": "json"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/openalex/bilgi_yonetimi.json",
+      "bytes": 3168976,
+      "sha256": "e04a4a645c789c8515c8d7d09457cb809261a76c1344136d527b1b698419bac7",
+      "format": "json"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/openalex/lam_research_journal.json",
+      "bytes": 1064669,
+      "sha256": "323d57cb785337ad5549a6f66fe46fc5e65369d41416996b7771a0715d6c1438",
+      "format": "json"
+    },
+    {
+      "path": "bby-metadata-project/02_data_collection/raw_data/openalex/turk_kutuphaneciligi.json",
+      "bytes": 25390443,
+      "sha256": "3f05db60a7563cc4375c40af4e0b13774ef9bb87607989c57bc5a5de4a71bc63",
+      "format": "json"
+    }
+  ]
+}

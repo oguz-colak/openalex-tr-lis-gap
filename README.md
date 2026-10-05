@@ -1,62 +1,65 @@
-# Symposium-Proceeding: 5. Uluslararası Gelenekten Geleceğe BBY Sempozyumu
+# Türkiye KBB Dergilerinde Üstveri Kalitesi
 
-Bu proje, 5–6 Kasım 2026 tarihlerinde İstanbul 29 Mayıs Üniversitesi'nde gerçekleştirilecek olan **"5. Uluslararası Gelenekten Geleceğe Bilgi ve Belge Yönetimi Sempozyumu"** için hazırlanacak bildiriyi içermektedir.
+Bu repo, Türkiye'de yayımlanan altı Kütüphane ve Bilgi Bilimi (KBB)
+dergisinin ulusal platformlardaki üstverilerini OpenAlex kayıtlarıyla
+karşılaştıran yeniden üretilebilir araştırma çalışma alanıdır.
 
-## 📌 Sempozyum Bilgileri
-- **Ana Tema:** Sürdürülebilirlik Ekseninde Bilgi ve Belge Yönetimi Disiplini
-Ana Tema
+## Kapsam
 
-Sürdürülebilirlik Ekseninde Bilgi ve Belge Yönetimi Disiplini
+- Ulusal kaynaklar: DergiPark MODS ve Bilgi Dünyası MARCXML.
+- OpenAlex kaynağı: dergi bazında JSON çalışma kayıtları.
+- Ulusal kayıt sayısı: **2.235**.
+- OpenAlex kayıt sayısı: **2.828**.
+- Karşılaştırma alanları: başlık, yazarlar, yıl, tarih, DOI, dil, tür, cilt,
+  sayı, sayfa ve özet.
+- Analiz boyutları: alan doluluğu/kayıt tamlığı ve kaynaklar arası tutarlılık.
 
-Alt Temalar
+Kesin kurallar ve metodolojik sınırlılıklar için
+[`docs/methodology/analysis-plan.md`](docs/methodology/analysis-plan.md)
+dosyasına bakın.
 
-1. Sürdürülebilir Bilgi Yönetimi Yaklaşımları
+## Dizin yapısı
 
-Bilgi ekosistemlerinde sürdürülebilirlik modelleri
-Kurumsal sürdürülebilirlik politikalarının bilgi merkezlerine yansımaları
-Yeşil bilgi yönetimi
-Bilgi yaşam döngüsünde çevresel sürdürülebilirlik
-2. Dijital Dönüşüm, Yenilikçi Teknolojiler ve Sürdürülebilirlik
+```text
+bby-metadata-project/
+├── 02_data_collection/raw_data/
+│   ├── dergipark/       # Beş derginin MODS XML snapshot'ları
+│   ├── bilgi_dunyasi/   # Bilgi Dünyası MARCXML snapshot'ı
+│   └── openalex/        # Altı derginin OpenAlex JSON snapshot'ları
+└── logs/
+    ├── *_harvester.py   # Veri toplama betikleri
+    └── normalization.md # Normalizasyon kararları ve bulgular
+docs/
+├── methodology/         # Analiz planı ve alan sözlüğü
+├── data-provenance.json # Snapshot hash ve boyut manifesti
+└── reproducibility.md   # Ortam ve çalıştırma talimatları
+scripts/provenance/      # Manifest üretim aracı
+tests/                   # Migration ve provenance testleri
+```
 
-Yapay zekâ, otomasyon ve sürdürülebilir bilgi hizmetleri
-Kurumsal hafıza, dijital arşivleme ve uzun vadeli dijital koruma stratejileri
-Büyük veri ve sürdürülebilir dijital altyapılar
-Dijital bağımlılık–dijital sürdürülebilirlik dengesi
-Veri güvenliği
-3. Arşivcilikte ve Belge Yönetiminde Sürdürülebilir Uygulamalar
+## Hızlı başlangıç
 
-Kurumsal arşivlerde sürdürülebilir saklama politikaları
-Belge yönetimi süreçlerinde enerji verimliliği
-Elektronik belge sistemlerinde sürdürülebilirlik
-Belgesel mirasın korunmasında sürdürülebilirlik odaklı yaklaşımlar
-Afet yönetimi ve belge kurtarma planlarında sürdürülebilirlik
-4. Kütüphanelerde Sürdürülebilir Yönetim ve Hizmet Tasarımı
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m pytest -q
+python scripts/provenance/build_manifest.py
+```
 
-Sürdürülebilir kütüphane binaları ve yeşil kütüphane hareketi
-Teknik hizmetler ve kullanıcı hizmetlerinde sürdürülebilirlik
-Kaynak yönetimi ve koleksiyon geliştirme politikalarında sürdürülebilirlik
-Yaşam boyu öğrenmede sürdürülebilir modeller
-5. Açık Bilim, Açık Veri ve Sürdürülebilir Bilgi Ekosistemi
+Harvester betikleri ağ erişimi gerektirir ve mevcut raw snapshot'ların üzerine
+yazabilir. OpenAlex polite-pool iletişim adresi gerekiyorsa çalışma öncesinde
+ortam değişkeni olarak verin:
 
-Açık erişim ve sürdürülebilir modeller
-Araştırma verilerinin yönetiminde sürdürülebilirlik
-FAIR ilkeleri bağlamında sürdürülebilir veri pratikleri
-Açık bilim ve bilgi eşitliği
-6. Bilgi Profesyonellerinin Değişen Rolleri ve Sürdürülebilir Mesleki Gelişim
+```powershell
+$env:OPENALEX_MAILTO = "kendi-adresiniz@example.org"
+```
 
-Bilgi politikalarında yönetim ve yönetişim
-Yeni yetkinlikler: dijital, etik ve sürdürülebilirlik odaklı beceriler
-Bilgi merkezlerinde sürdürülebilir insan kaynakları yönetimi
-Mesleki etik, sosyal sorumluluk ve sürdürülebilirlik
-## ⏳ Takvim
-- **Özet Gönderimi:** 31 Mayıs 2026
-- **Tam Metin Gönderimi:** 15 Ekim 2026
-- **Sempozyum:** 5–6 Kasım 2026
+PDF tam metinleri, geçici loglar, Python cache dosyaları ve credential dosyaları
+repo kapsamı dışındadır. Ham bibliyografik XML/JSON kayıtları ise snapshot ve
+provenance amacıyla korunur.
 
-## 📂 Proje Yapısı
-- `/abstract`: Bildiri özeti taslakları.
-- `/full_paper`: Bildiri tam metin taslakları.
-- `/references`: Kaynakça ve materyaller.
+## Lisans ve kullanım notu
 
----
-*Bu çalışma Antigravity AI asistani ile geliştirilmektedir.*
+Bu repo araştırma yeniden üretilebilirliği içindir. Harici kaynakların kullanım
+koşulları, telifleri ve API politikaları ayrıca geçerlidir.
