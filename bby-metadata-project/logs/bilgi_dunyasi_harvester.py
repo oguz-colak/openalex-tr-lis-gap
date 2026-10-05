@@ -31,7 +31,7 @@ BASE_DIR.mkdir(parents=True, exist_ok=True)
 
 OAI_OUT = BASE_DIR / "oai_bd.xml"
 TRDIZIN_OUT = BASE_DIR / "trdizin.json"
-HARVEST_LOG = Path(__file__).parent / "raw_data" / "harvest_log.json"
+HARVEST_LOG = PROJECT_ROOT / "02_data_collection" / "raw_data" / "harvest_log.json"
 
 # ---------------------------------------------------------------------------
 # Constants

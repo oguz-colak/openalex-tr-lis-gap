@@ -31,6 +31,7 @@ def test_harvesters_write_under_project_raw_data(monkeypatch: pytest.MonkeyPatch
     assert openalex.OUTPUT_DIR == expected / "openalex"
     assert dergipark.OUTPUT_DIR == expected / "dergipark"
     assert bilgi_dunyasi.BASE_DIR == expected / "bilgi_dunyasi"
+    assert bilgi_dunyasi.HARVEST_LOG == expected / "harvest_log.json"
 
 
 def test_openalex_mailto_is_optional_and_not_hardcoded(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
